@@ -11,15 +11,25 @@ public class MainService {
 
 	public static void main(String[] args) {
 		try {
-			MyStack complexStack = new MyStack();
 			
-			Scanner scanner = new Scanner(System.in);
+			MyStack<ComplexNum> complexStack = new MyStack();
 			
-			System.out.println("----COMPLEX NUMBER----");
-			
-			complexStack.push("(2+7i)/(3.4-4.1i)-(-2+9i)\n");
+			complexStack.push(new ComplexNum(2, 2.4));	
+			complexStack.push(new ComplexNum(5, 5.5));
+			complexStack.push(new ComplexNum(6.2, 1));
+			complexStack.push(new ComplexNum(3, 2.8));
 			complexStack.print();
 			
+			MyStack charStack = new MyStack();
+			
+			charStack.push("-");
+			charStack.push("/");
+			charStack.print();
+			
+			
+			/*
+			
+			Scanner scanner = new Scanner(System.in);
 			
 			System.out.println("Enter the real part of first complex number : ");
 	        int real1 = scanner.nextInt();
@@ -47,17 +57,36 @@ public class MainService {
 	        complexStack.push(secondNum);
 	        complexStack.push(thirdNum);
 	        complexStack.print();
-	        
+	        */
 	        
 	        ComplexNum divide = new ComplexNum(); 
-	        divide = divide.divideComplex(firstNum, secondNum, thirdNum); 
+	        
+	        complexStack.push(new ComplexNum(2.5, 2.2));	
+			complexStack.push(new ComplexNum(5.1, 9));
+	        complexStack.push(new ComplexNum(5, 7.1));
+	        complexStack.top();
+	        complexStack.pop();
+	        complexStack.top();
+	        complexStack.pop();
+	        
+	        divide = divide.divideComplex(complexStack.top(), complexStack.top()); 
 	        
 	        ComplexNum substract = new ComplexNum(); 
-	        substract = substract.subtractComplex(firstNum, secondNum, thirdNum); 
+	        
+	        complexStack.push(new ComplexNum(2.1, 3.2));	
+			complexStack.push(new ComplexNum(6, 9.2));
+	        complexStack.push(new ComplexNum(5.7, 7.1));
+	        complexStack.top();
+	        complexStack.pop();
+	        complexStack.top();
+	        complexStack.pop();
+	        
+	        substract = substract.subtractComplex(complexStack.top(), complexStack.top()); 
 	        
 	        ComplexNum sum = new ComplexNum(); 
-	        sum = sum.addComplex(firstNum, secondNum, thirdNum); 
+	        sum = sum.addComplex(complexStack.top(), complexStack.top()); 
 	        
+	        /*
 	        if(divide.getImag() >= 0 || divide.getImag() <= 0) {
 	            System.out.println("The complex number after divide : " + "(" + divide.getReal()+ " + " + divide.getImag() 
 	            + "i" + ")" + "/" + "(" + divide.getReal() + " - " + divide.getImag() 
@@ -68,7 +97,7 @@ public class MainService {
 	        	System.out.println("Wrong parameters");
 	        }
 	        
-	        
+	        /*
 	        System.out.println("Enter the real part of first complex number : ");
 	        int real5 = scanner.nextInt();
 	        
@@ -123,7 +152,7 @@ public class MainService {
 	        else {
 	        	System.out.println("Wrong parameters");
 	        }
-	        
+	        */
 	        System.out.println("----------------");
 	        
 	        //read from file

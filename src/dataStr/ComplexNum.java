@@ -21,30 +21,29 @@ public class ComplexNum {
 	
 	public ComplexNum() {}
 	
-	public ComplexNum(double realr, double imagr) {
-		super();
-		this.real = realr;
-		this.imag = imagr;
+	public ComplexNum(double real, double imag) {
+		this.real = real;
+		this.imag = imag;
 	}
 	
-	public ComplexNum addComplex(ComplexNum firstNum, ComplexNum secondNum, ComplexNum thirdNum) {
+	public ComplexNum addComplex(ComplexNum firstNum, ComplexNum secondNum) {
 		ComplexNum temp = new ComplexNum();
-		temp.real = firstNum.real + secondNum.real + thirdNum.real;
-		temp.imag = firstNum.imag + secondNum.imag + thirdNum.imag;
+		temp.real = firstNum.real + secondNum.real;
+		temp.imag = firstNum.imag + secondNum.imag;
 		return temp;
 	}
 	
-	public ComplexNum divideComplex(ComplexNum firstNum, ComplexNum secondNum, ComplexNum thirdNum) {
+	public ComplexNum divideComplex(ComplexNum firstNum, ComplexNum secondNum) {
 		ComplexNum temp = new ComplexNum();
-		temp.real = firstNum.real / secondNum.real / thirdNum.real;
-		temp.imag = firstNum.imag / secondNum.imag / thirdNum.imag;
+		temp.real = firstNum.real / secondNum.real;
+		temp.imag = firstNum.imag / secondNum.imag;
 		return temp;
 	}
 	
-	public ComplexNum subtractComplex(ComplexNum firstNum, ComplexNum secondNum, ComplexNum thirdNum) {
+	public ComplexNum subtractComplex(ComplexNum firstNum, ComplexNum secondNum) {
 		ComplexNum temp = new ComplexNum();
-		temp.real = firstNum.real - secondNum.real - thirdNum.real;
-		temp.imag = firstNum.imag - secondNum.imag - thirdNum.imag;
+		temp.real = firstNum.real - secondNum.real;
+		temp.imag = firstNum.imag - secondNum.imag;
 		return temp;
 	}
 }
