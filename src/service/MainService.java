@@ -20,6 +20,7 @@ public class MainService {
 			complexStack.push("(2+7i)/(3.4-4.1i)-(-2+9i)\n");
 			complexStack.print();
 			
+			
 			System.out.println("Enter the real part of first complex number : ");
 	        int real1 = scanner.nextInt();
 	        
@@ -41,6 +42,12 @@ public class MainService {
 	        ComplexNum firstNum = new ComplexNum(real1, img11); 
 	        ComplexNum secondNum = new ComplexNum(real2, img12); 
 	        ComplexNum thirdNum = new ComplexNum(real3, img13); 
+	        
+	        complexStack.push(firstNum);
+	        complexStack.push(secondNum);
+	        complexStack.push(thirdNum);
+	        complexStack.print();
+	        
 	        
 	        ComplexNum divide = new ComplexNum(); 
 	        divide = divide.divideComplex(firstNum, secondNum, thirdNum); 
